@@ -1,0 +1,23 @@
+PrettyFileSize
+==============
+
+Allows to print file size (given in bytes) in very pretty way.
+
+Example
+=======
+
+pretty_file_size(1023) => '1023 b'
+pretty_file_size(1024) => '1 Kb'
+
+pretty_file_size(123.123) => '123.12 b'
+pretty_file_size(123.123 :accuracy => 3) => '123.123 b'
+
+pretty_file_size(1024) do |size, unit|
+  # size = 1 unit = " Mb"
+  "Size is " + size + " and the unit is" + unit
+end => "Size is 1 and the unit is Mb"
+
+pretty_file_size(1024, :names => { :kb => " Kilobyte" }) => '1 Kilobyte'
+
+
+Copyright (c) 2010 Olexiy Zamkoviy, released under the MIT license
